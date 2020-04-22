@@ -31,9 +31,13 @@ function repair(item) {
 }
 
 function get(item) {
-	return { ...item };
+	return {
+    ...item,
+    itemName: `${item.itemName} [+${item.enhancement}]`
+	};
 }
 
+// probably too easy to enchant compared to Black Desert
 function chanceGenerator(enchantNum) {
 	const min = enchantNum;
 	const max = 20;

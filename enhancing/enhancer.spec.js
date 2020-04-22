@@ -52,5 +52,21 @@ describe('Black Desert Enchanting System Test', () => {
     test('should return durabiulity - 10', () => {
 			expect(enhancer.fail(KaiaAmulet).durability).toBe(71);
 		});
-	});
+  });
+  
+  describe('.get', () => {
+    const dandelionAadSphera = {
+      itemName: 'Dandelion Aad Sphera',
+			ap: 27,
+			durability: 87,
+			enhancement: 17,
+			crit: 9,
+			slots: 0,
+		};
+    test('should return a item with its enchant level attached', () => {
+      expect(enhancer.get(dandelionAadSphera).itemName).toBe(`Dandelion Aad Sphera [+17]`)
+    })
+    
+  })
+  
 });
