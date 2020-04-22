@@ -62,9 +62,20 @@ describe('Black Desert Enchanting System Test', () => {
 			enhancement: 17,
 			crit: 9,
 			slots: 0,
+    };
+    const dandelionChakRam = {
+      itemName: 'Dandelion Chak Ram',
+			ap: 27,
+			durability: 87,
+			enhancement: 0,
+			crit: 9,
+			slots: 0,
 		};
     test('should return a item with its enchant level attached', () => {
       expect(enhancer.get(dandelionAadSphera).itemName).toBe(`Dandelion Aad Sphera [+17]`)
+    })
+    test('should return a item without enchant level if its 0', () => {
+      expect(enhancer.get(dandelionChakRam).itemName).toBe('Dandelion Chak Ram')
     })
     
   })

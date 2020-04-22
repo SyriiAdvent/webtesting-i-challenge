@@ -33,7 +33,8 @@ function repair(item) {
 function get(item) {
 	return {
     ...item,
-    itemName: `${item.itemName} [+${item.enhancement}]`
+    itemName: 
+      item.enhancement !== 0 ? `${item.itemName} [+${item.enhancement}]` : item.itemName
 	};
 }
 
